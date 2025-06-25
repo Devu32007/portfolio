@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Devu | Portfolio</title>
+  <style>
+    :root {
+      --bg-color: #0f0f0f;
+      --text-color: #ffffff;
+      --accent-color: #00bcd4;
+      --border-color: #00bcd4;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: var(--bg-color);
+      color: var(--text-color);
+      transition: background 0.5s ease, color 0.5s ease;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 60px;
+      background: #1c1c1c;
+      border-bottom: 2px solid var(--border-color);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      animation: slideDown 1s ease;
+    }
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: var(--accent-color);
+    }
+    nav a {
+      text-decoration: none;
+      color: var(--text-color);
+      margin-left: 30px;
+      font-size: 16px;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: var(--accent-color);
+    }
+    .flex {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 80px 60px;
+      flex-wrap: wrap;
+      text-align: center;
+      animation: fadeIn 1.5s ease;
+    }
+    .flex h1 {
+      font-size: 48px;
+      color: var(--accent-color);
+      margin-bottom: 20px;
+    }
+    .tagline {
+      font-size: 22px;
+      color: var(--text-color);
+      display: block;
+      margin-top: 10px;
+    }
+    .flex img {
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid var(--border-color);
+      margin-top: 20px;
+      animation: zoomIn 1.2s ease;
+    }
+    .section {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 40px 30px;
+      background: #1a1a1a;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 188, 212, 0.2);
+    }
+    .section h2 {
+      font-size: 32px;
+      color: var(--accent-color);
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .about p {
+      font-size: 18px;
+      line-height: 1.6;
+      text-align: center;
+    }
+    .skill-bar {
+      margin: 15px 0;
+    }
+    .skill-bar label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 5px;
+    }
+    .bar {
+      background: #333;
+      border-radius: 6px;
+      overflow: hidden;
+      height: 20px;
+    }
+    .fill {
+      height: 100%;
+      color: #fff;
+      font-size: 14px;
+      text-align: right;
+      padding-right: 10px;
+      line-height: 20px;
+      background: var(--accent-color);
+      animation: growBar 2s ease forwards;
+    }
+    .service-boxes {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+    .service-box {
+      background: #1f1f1f;
+      padding: 20px;
+      border-radius: 10px;
+      border: 1px solid var(--border-color);
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+    .service-box:hover {
+      background: #2c2c2c;
+      transform: translateY(-5px);
+    }
+    .service-box img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+    .service-box h3 {
+      margin: 15px 0 10px;
+      color: var(--accent-color);
+    }
+    .service-box p {
+      font-size: 14px;
+      color: #ddd;
+    }
+    .service-box button {
+      margin-top: 10px;
+      background: var(--accent-color);
+      color: #fff;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .service-box button:hover {
+      opacity: 0.85;
+    }
+    .social-links {
+      margin-top: 40px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    .social-links a {
+      color: var(--accent-color);
+      font-size: 24px;
+      transition: color 0.3s ease;
+      text-decoration: none;
+    }
+    .social-links a:hover {
+      color: #fff;
+    }
+    footer {
+      background: #1c1c1c;
+      border-top: 2px solid var(--border-color);
+      text-align: center;
+      padding: 20px;
+    }
+    footer p {
+      color: #ccc;
+    }
+    @keyframes growBar {
+      0% { width: 0%; opacity: 0; }
+      100% { opacity: 1; }
+    }
+    @keyframes slideDown {
+      0% { transform: translateY(-100%); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: scale(0.95); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+    @keyframes zoomIn {
+      0% { transform: scale(0.5); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+  <header>
+    <div class="logo">Devu</div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+    </nav>
+  </header>
+
+  <div class="flex">
+    <div>
+      <h1>Hi, I am Devu</h1>
+      <span class="tagline">Web Developer | AI Explorer | Designer</span>
+    </div>
+    <img src="devang.jpg.webp" alt="Devu" />
+  </div>
+
+  <div class="section about" id="about">
+    <h2>About Me</h2>
+    <p>I'm Devu, 19 years old – a passionate web developer and creative designer dedicated to crafting beautiful, functional websites.<br><br><strong>I'm also the Co-founder of <span style="color: var(--accent-color);">Alakh Digital</span>.</strong></p>
+  </div>
+
+  <div class="section" id="skills">
+    <h2>My Skills</h2>
+    <div class="skill-bar"><label>HTML</label><div class="bar"><div class="fill" style="width: 95%">95%</div></div></div>
+    <div class="skill-bar"><label>CSS</label><div class="bar"><div class="fill" style="width: 90%">90%</div></div></div>
+    <div class="skill-bar"><label>JavaScript</label><div class="bar"><div class="fill" style="width: 75%">75%</div></div></div>
+    <div class="skill-bar"><label>PHP</label><div class="bar"><div class="fill" style="width: 80%">80%</div></div></div>
+    <div class="skill-bar"><label>MySQL</label><div class="bar"><div class="fill" style="width: 75%">75%</div></div></div>
+    <div class="skill-bar"><label>Prompt Engineering</label><div class="bar"><div class="fill" style="width: 85%">85%</div></div></div>
+    <div class="skill-bar"><label>Content Writing</label><div class="bar"><div class="fill" style="width: 88%">88%</div></div></div>
+    <div class="skill-bar"><label>Video Editing</label><div class="bar"><div class="fill" style="width: 70%">70%</div></div></div>
+  </div>
+
+  <div class="section" id="projects">
+    <h2>My Projects</h2>
+    <div class="service-boxes">
+      <div class="service-box">
+        <img src="https://images.unsplash.com/photo-1588702547920-1c1c1c1c1c1c" alt="Hotel Management System" />
+        <h3>Hotel Management System</h3>
+        <p>A hotel booking and management platform with admin dashboard and real-time room booking features.</p>
+        <button>View Project</button>
+      </div>
+      <div class="service-box">
+        <img src="https://images.unsplash.com/photo-1588702547920-1c1c1c1c1c1c" alt="E-Commerce Website" />
+        <h3>E-Commerce Website</h3>
+        <p>A complete online store with shopping cart, user login, and payment gateway integration.</p>
+        <button>View Project</button>
+      </div>
+      <div class="service-box">
+        <img src="https://images.unsplash.com/photo-1588702547920-1c1c1c1c1c1c" alt="Travelopea" />
+        <h3>Travelopea</h3>
+        <p>A visually rich travel site offering image sliders, day-wise itineraries, and seamless UX for trip planning.</p>
+        <button>View Project</button>
+      </div>
+      <div class="service-box">
+        <img src="https://images.unsplash.com/photo-1588702547920-1c1c1c1c1c1c" alt="Portfolio Website" />
+        <h3>Portfolio Website</h3>
+        <p>A personal portfolio website showcasing my projects and skills, built with HTML, CSS, and JavaScript.</p>
+        <button>View Project</button>
+      </div>
+      <div class="service-box">
+        <img src="https://images.unsplash.com/photo-1588702547920-1c1c1c1c1c1c" alt="Blog Platform" />
+        <h3>Blog Platform</h3>
+        <p>A blogging platform built with PHP and MySQL, allowing users to create, edit, and delete posts.</p>
+        <button>View Project</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="social-links">
+    <a href="https://www.instagram.com/callme_.devu?igsh=MWU1MGNhMjl1MHd1aA==" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.linkedin.com/in/devang-chauhan-1954842b7?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+    <a href="https://github.com/account" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+    <a href="https://www.facebook.com/share/1EXa4KwpYi/" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+    <a href="https://whatsapp.com/dl/" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+  </div>
+
+  <footer>
+    <p>© 2025 Devu. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll('.fill').forEach((bar) => {
+        bar.style.width = bar.textContent;
+      });
+    });
+  </script>
+</body>
+</html>
